@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.user.myapplicationcrate.Main2Activity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Название теста"
+            android:id="@+id/textView3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="30dp" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="240dp"
+            android:id="@+id/scrollView2"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Кино"
+                    android:checked="true"
+                    android:layout_weight="0.14"
+                    android:textSize="20dp"
+                    android:id="@+id/radio1"
+                    android:onClick="gb" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Музыка"
+                    android:checked="false"
+                    android:layout_weight="0.14"
+                    android:textSize="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/radio2"
+                    android:onClick="gb" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Спорт"
+                    android:id="@+id/radio3"
+                    android:checked="false"
+                    android:layout_weight="0.14"
+                    android:textSize="20dp"
+                    android:onClick="gb" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Фильмы"
+                    android:id="@+id/radio4"
+                    android:checked="false"
+                    android:layout_weight="0.14"
+                    android:textSize="20dp"
+                    android:onClick="gb" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Разное"
+                    android:id="@+id/radio5"
+                    android:checked="false"
+                    android:layout_weight="0.14"
+                    android:textSize="20dp"
+                    android:onClick="gb" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scrollView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Назад"
+                android:id="@+id/button7"
+                android:layout_below="@+id/scrollView2"
+                android:layout_toRightOf="@+id/button6"
+                android:layout_toEndOf="@+id/button6"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Далее"
+                android:id="@+id/button6"
+                android:layout_below="@+id/scrollView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:onClick="nx" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -24,22 +24,37 @@ public class MainActivity extends AppCompatActivity {
     private String[][] str = new String[1000][100];
     private int[] countq = new int[1050];
     private int[] tr = new int[1000];
+    private int pr;
+    private String name_test = new String();
+    private String category = new String();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         nom = (TextView) findViewById(R.id.textView2);
         vpp = (EditText) findViewById(R.id.editText);
         linner = (LinearLayout) findViewById(R.id.lin);
 
         RadioGroup gr = new RadioGroup(this);
         tr[1] = 0;
-
         lpView = new AbsListView.LayoutParams(AbsListView.LayoutParams.WRAP_CONTENT,
                 AbsListView.LayoutParams.WRAP_CONTENT);
 
+        RadioButton rr = (RadioButton) findViewById(R.id.radio1);
+        rr.setId(1);
+        rr = (RadioButton) findViewById(R.id.radio2);
+        rr.setId(2);
+        rr = (RadioButton) findViewById(R.id.radio3);
+        rr.setId(3);
+        rr = (RadioButton) findViewById(R.id.radio4);
+        rr.setId(4);
+        rr = (RadioButton) findViewById(R.id.radio5);
+        rr.setId(5);
 
+        pr = 1;
     }
 
     public void onleftclick(View view) {
@@ -404,5 +419,42 @@ public class MainActivity extends AppCompatActivity {
         int a = 18;
     }
 
+
+    public void gb(View v) {
+
+        RadioButton r = (RadioButton) findViewById(pr);
+        r.setChecked(false);
+        pr = v.getId();
+        ((RadioButton) v).setChecked(true);
+
+    }
+
+    public void nx(View v) {
+
+        EditText ed = (EditText) findViewById(R.id.editText2);
+
+        name_test = ed.getText().toString();
+        if (name_test.equals("")) name_test = "unknown";
+        switch (pr) {
+            case 1:
+                category = "кино";
+                break;
+            case 2:
+                category = "музыка";
+                break;
+            case 3:
+                category = "спорт";
+                break;
+            case 4:
+                category = "фильмы";
+                break;
+            case 5:
+                category = "разное";
+                break;
+        }
+        setContentView(R.layout.activity_main);
+
+
+    }
 
 }

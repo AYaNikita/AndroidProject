@@ -82,7 +82,8 @@
                 android:layout_height="wrap_content"
                 android:text="Выход"
                 android:id="@+id/button3"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="ex" />
         </LinearLayout>
 
     </LinearLayout>

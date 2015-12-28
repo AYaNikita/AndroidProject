@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -12,13 +13,13 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private String s;
+    private String s,sname;
     private int current=1;
     private TextView nom;
     public LinearLayout linner;
     private AbsListView.LayoutParams lpView;
     private int n;
-    private TextView vpp;
+    private TextView vpp,v1;
     private String[][] str=new String[1000][100];
     private int[] countq=new int[1050];
     private int[] tr=new int[1000];
@@ -32,7 +33,15 @@ public class MainActivity extends AppCompatActivity {
          linner=(LinearLayout)findViewById(R.id.lin);
          vpp=(TextView)findViewById(R.id.textView3);
         nom=(TextView)findViewById(R.id.textView2);
-        s="3☺3☺2+2*2☺Я не знаю, я  гуманитарий☺6☺я не знаю я работник mail.ru☺2☺3☺Вопрос2☺Ответ1☺Ответ2☺Ответ3☺1☺8☺Вопрос3☺Ответ1☺Ответ2☺Ответ3☺Ответ4☺Ответ5☺Ответ6☺Ответ7☺Ответ8☺1☺";
+        s="3☺3☺2+2*2☺Я не знаю, я  гуманитарий☺6☺я не знаю я блондика☺2☺3☺Вопрос2☺Ответ1☺Ответ2☺Ответ3☺1☺8☺Вопрос3☺Ответ1☺Ответ2☺Ответ3☺Ответ4☺Ответ5☺Ответ6☺Ответ7☺Ответ8☺1☺";
+        sname="Name";
+        //s=getIntent().getStringExtra("text");
+
+
+        v1=(TextView)findViewById(R.id.textView);
+        v1.setText(sname);
+
+
         lpView = new AbsListView.LayoutParams(AbsListView.LayoutParams.WRAP_CONTENT,
                 AbsListView.LayoutParams.WRAP_CONTENT);
         parr(s);
@@ -87,9 +96,8 @@ public class MainActivity extends AppCompatActivity {
             line.setId(current * 1000000 + 500000 + i);
             linner.addView(line);
 
-            TextView vop=new TextView(this);
+            AutoCompleteTextView vop=new AutoCompleteTextView(this);
             vop.setText(str[current][i]);
-            vop.setMaxLines(1);
             vop.setMaxWidth(270);
             vop.setMinWidth(270);
             vop.setLayoutParams(lpView);
@@ -201,7 +209,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+    public void ex(View v)
+    {
+        finish();
+    }
 
 
 
